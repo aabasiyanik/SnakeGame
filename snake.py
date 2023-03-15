@@ -4,17 +4,14 @@ import random
 
 pygame.init()
 
-# Oyun ekranının boyutları
 WIDTH = 600
 HEIGHT = 600
 CELL_SIZE = 20
 
-# Renkler
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 
-# Yılan ve yem için başlangıç ​​koordinatları
 snake_pos = [[100, 100], [80, 100], [60, 100]]
 snake_speed = [CELL_SIZE, 0]
 food_pos = [random.randrange(1, (WIDTH//CELL_SIZE)) * CELL_SIZE, random.randrange(1, (HEIGHT//CELL_SIZE)) * CELL_SIZE]
