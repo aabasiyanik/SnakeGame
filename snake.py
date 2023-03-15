@@ -20,6 +20,8 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Snake Game')
 
 clock = pygame.time.Clock()
+score = 0
+font = pygame.font.SysFont(None, 30)
 
 def game_over():
     pygame.quit()
@@ -32,6 +34,8 @@ def draw_objects():
         pygame.draw.rect(screen, GREEN, pygame.Rect(pos[0], pos[1], CELL_SIZE, CELL_SIZE))
 
     pygame.draw.rect(screen, RED, pygame.Rect(food_pos[0], food_pos[1], CELL_SIZE, CELL_SIZE))
+    score_text = font.render("Score: " + str(score), True, (0, 0, 0))
+    screen.blit(score_text, (10, 10))
 
 while True:
     for event in pygame.event.get():
@@ -52,6 +56,7 @@ while True:
 
     if snake_pos[0] == food_pos:
         food_pos = [random.randrange(1, (WIDTH//CELL_SIZE)) * CELL_SIZE, random.randrange(1, (HEIGHT//CELL_SIZE)) * CELL_SIZE]
+        score += 1
     else:
         snake_pos.pop()
 
