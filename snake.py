@@ -54,7 +54,7 @@ def draw_objects():
     screen.fill((249, 255, 229))
 
     for pos in snake_pos:
-        pygame.draw.rect(screen, GREEN, pygame.Rect(pos[0], pos[1], CELL_SIZE, CELL_SIZE))
+        pygame.draw.rect(screen, (98, 189, 105), pygame.Rect(pos[0], pos[1], CELL_SIZE, CELL_SIZE))
         pygame.draw.rect(screen, GRAY, pygame.Rect(pos[0], pos[1], CELL_SIZE, CELL_SIZE), 1)
 
     pygame.draw.rect(screen, RED, pygame.Rect(food_pos[0], food_pos[1], CELL_SIZE, CELL_SIZE))
